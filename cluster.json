@@ -1,0 +1,2372 @@
+{
+    "network": {
+        "10_0_0_0-255_0_0_0": {
+            "basic_attr": {
+                "gateway": "10.0.0.101",
+                "mask": "255.0.0.0",
+                "mgtifname": "enP2p1s0f1",
+                "net": "10.0.0.0"
+            },
+            "service": {
+                "tftpserver": "<xcatmaster>"
+            }
+        },
+        "172_10_0_0-255_255_0_0": {
+            "basic_attr": {
+                "mask": "255.255.0.0",
+                "mgtifname": "enP34p1s0f0",
+                "net": "172.10.0.0"
+            },
+            "pool": {
+                "dynamicrange": "172.10.253.100-172.10.253.200"
+            }
+        },
+        "172_11_0_0-255_255_0_0": {
+            "basic_attr": {
+                "gateway": "<xcatmaster>",
+                "mask": "255.255.0.0",
+                "mgtifname": "enP34p1s0f1",
+                "net": "172.11.0.0"
+            },
+            "pool": {
+                "dynamicrange": "172.11.253.100-172.11.253.200"
+            }
+        },
+        "172_12_0_0-255_255_0_0": {
+            "basic_attr": {
+                "gateway": "<xcatmaster>",
+                "mask": "255.255.0.0",
+                "mgtifname": "enP34p1s0f0.12",
+                "net": "172.12.0.0"
+            },
+            "pool": {
+                "dynamicrange": "172.12.253.100-172.12.253.200"
+            },
+            "service": {
+                "dhcpserver": "172.12.253.27",
+                "tftpserver": "<xcatmaster>"
+            }
+        },
+        "ibnet": {
+            "basic_attr": {
+                "mask": "255.255.255.0",
+                "net": "20.0.0.0"
+            }
+        }
+    },
+    "node": {
+        "abcdef": {
+            "device_info": {
+                "characteristics": "bmc"
+            },
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "bmc=|\\D+(\\d+)\\D+(\\d+)\\D+(\\d+)|172.12.(($1-1)*32+$2-1).($3%100+100)|": {
+            "device_type": "server",
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "bogusgroup": {
+            "device_type": "server",
+            "obj_info": {
+                "grouptype": "static",
+                "members": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "bogusnode": {
+            "deprecated": {
+                "cfgmgtcfgmgr": "cfgmgr",
+                "cfgmgtcfgserver": "cfgserver",
+                "cfgmgtroles": "cfgmgtroles",
+                "chainondiscover": "ondiscover",
+                "hypervisorcluster": "hostcluster",
+                "hypervisorinterface": "hostinterface",
+                "hypervisormgr": "hostmanager",
+                "hypervisortype": "hosttype",
+                "iscsipasswd": "iscsipassword",
+                "iscsiserver": "iscsiserver",
+                "iscsitarget": "iscsitarget",
+                "iscsiuserid": "iscsiuserid",
+                "macinterface": "interface",
+                "nodehmcmdmapping": "cmdmapping",
+                "nodehmgetmac": "getmac",
+                "nodelisthidden": "hidden",
+                "noderesnfsdir": "nfsdir",
+                "noderesnimserver": "nimserver",
+                "noderesprimarynic": "primarynic",
+                "noderesproxydhcp": "supportproxydhcp",
+                "servicenodeftpserver": "setupftp",
+                "servicenodenimserver": "setupnim",
+                "storagecontroller": "storagcontroller",
+                "storageosvolume": "osvolume",
+                "storagetype": "storagetype",
+                "tftpdir": "tftpdir",
+                "vmmigrationdest": "migrationdest",
+                "vmtextconsole": "vmtextconsole",
+                "vpdside": "side"
+            },
+            "device_info": {
+                "arch": "arch",
+                "characteristics": "mp",
+                "cpucount": "cpucount",
+                "cputype": "cputype",
+                "disksize": "disksize",
+                "memory": "memory",
+                "mtm": "mtm",
+                "serial": "serial",
+                "supportedarchs": "supportedarchs"
+            },
+            "device_type": "server",
+            "domain_info": {
+                "adminpassword": "domainadminpassword",
+                "adminuser": "domainadminuser",
+                "authdomain": "authdomain",
+                "ou": "ou",
+                "type": "domaintype"
+            },
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "conserver": "conserver",
+                        "consoleondemand": "consoleondemand",
+                        "serialflow": "serialflow",
+                        "serialport": "serialport",
+                        "serialspeed": "serialspeed",
+                        "terminalport": "termport",
+                        "terminalserver": "termserver"
+                    },
+                    "engine_type": "cons"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "bmc",
+                        "bmcpassword": "bmcpassword",
+                        "bmctaggedvlan": "bmcvlantag",
+                        "bmcusername": "bmcusername",
+                        "consport": "consport",
+                        "hwtype": "hwtype",
+                        "mpa": "mpa",
+                        "sfp": "sfp",
+                        "supernode": "supernode",
+                        "vmbeacon": "vmbeacon",
+                        "vmbootorder": "vmbootorder",
+                        "vmcfgstore": "vmcfgstore",
+                        "vmcluster": "vmcluster",
+                        "vmmanager": "vmmanager",
+                        "vmmaster": "vmmaster",
+                        "vmnicnicmodel": "vmnicnicmodel",
+                        "vmphyslots": "vmphyslots",
+                        "vmstorage": "vmstorage",
+                        "vmstoragecache": "vmstoragecache",
+                        "vmstorageformat": "vmstorageformat",
+                        "vmstoragemodel": "vmstoragemodel",
+                        "vmtextconsole": "vmstorageformat",
+                        "vmvirtflags": "vmvirtflags",
+                        "vmvncport": "vmvncport"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "addkcmdline": "addkcmdline",
+                        "chain": "chain",
+                        "installnic": "installnic",
+                        "osimage": "provmethod",
+                        "postbootscripts": "postbootscripts",
+                        "postscripts": "postscripts",
+                        "prescriptsbegin": "prescripts-begin",
+                        "prescriptsend": "prescripts-end"
+                    },
+                    "engine_type": "netboot"
+                },
+                "power_mgt_engine": {
+                    "engine_info": {
+                        "pdu": "pdu"
+                    },
+                    "engine_type": "power"
+                }
+            },
+            "network_info": {
+                "nics": {
+                    "bond0": {
+                        "nicdevices": [
+                            "eth0",
+                            "eth2"
+                        ]
+                    },
+                    "br0": {
+                        "nicdevices": [
+                            "bond0"
+                        ]
+                    },
+                    "enP3p3s0f1": {
+                        "nicsinfo": [
+                            "mac=98:be:94:59:fa:cd linkstate=DOWN"
+                        ]
+                    },
+                    "enP3p3s0f2": {
+                        "nicsinfo": [
+                            "mac=98:be:94:59:fa:ce candidatename=enP3p3s0f2/enx98be9459face"
+                        ]
+                    },
+                    "enP48p1s0f0": {
+                        "ips": [
+                            "129.40.234.11"
+                        ],
+                        "networks": [
+                            "pub_yellow"
+                        ],
+                        "type": [
+                            "Ethernet"
+                        ]
+                    },
+                    "enP48p1s0f1": {
+                        "networks": [
+                            "xcat_util"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1": {
+                        "networks": [
+                            "xcat_compute"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.4": {
+                        "networks": [
+                            "xcat_bmc"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.5": {
+                        "networks": [
+                            "xcat_infra"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.6": {
+                        "networks": [
+                            "xcat_pdu"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "eth0": {
+                        "alias": [
+                            "moe larry curly"
+                        ],
+                        "configscripts": [
+                            "configeth eth0"
+                        ],
+                        "extraconfig": [
+                            "MTU=1500"
+                        ],
+                        "hostnameprefixe": [
+                            "eth0-"
+                        ],
+                        "hostnamesuffixes": [
+                            "-eth0"
+                        ]
+                    },
+                    "eth1": {
+                        "alias": [
+                            "tom",
+                            "jerry"
+                        ]
+                    },
+                    "ib0": {
+                        "configscripts": [
+                            "configib ib0"
+                        ],
+                        "extraconfig": [
+                            "MTU=65520 CONNECTED_MODE=yes"
+                        ],
+                        "hostnameprefixe": [
+                            "ib-"
+                        ],
+                        "hostnamesuffixes": [
+                            "-ib0"
+                        ],
+                        "ips": [
+                            "10.10.100.9"
+                        ],
+                        "networks": [
+                            "IB00"
+                        ],
+                        "type": [
+                            "Infiniband"
+                        ]
+                    },
+                    "ib1": {
+                        "ips": [
+                            "10.11.100.9"
+                        ],
+                        "networks": [
+                            "IB01"
+                        ],
+                        "type": [
+                            "Infiniband"
+                        ]
+                    },
+                    "ib2": {
+                        "networks": [
+                            "IB02"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "ib3": {
+                        "networks": [
+                            "IB03"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    }
+                },
+                "otherinterfaces": "otherinterfaces",
+                "primarynic": {
+                    "hostnames": "hostnames",
+                    "ip": "ip",
+                    "mac": [
+                        "mac"
+                    ],
+                    "switch": "switch",
+                    "switchinterface": "switchinterface",
+                    "switchport": "switchport",
+                    "switchvlan": "switchvlan"
+                },
+                "routenames": "routenames"
+            },
+            "obj_info": {
+                "description": "usercomment",
+                "groups": "bogusgroup"
+            },
+            "obj_type": "node",
+            "position_info": {
+                "chassis": "chassis",
+                "height": "height",
+                "rack": "rack",
+                "room": "room",
+                "slot": "slot",
+                "unit": "unit"
+            },
+            "role": "service",
+            "role_info": {
+                "dhcpinterfaces": "dhcpinterfaces",
+                "enablesyslog": "syslog",
+                "monserver": "monserver",
+                "nameservers": "nameservers",
+                "nfsserver": "nfsserver",
+                "nodelistprimarysn": "primarysn",
+                "servicenode": "servicenode",
+                "setupconserver": "setupconserver",
+                "setupdhcp": "setupdhcp",
+                "setupipforward": "setupipforward",
+                "setupldap": "setupldap",
+                "setupnameserver": "setupnameserver",
+                "setupnfs": "setupnfs",
+                "setupntp": "setupntp",
+                "setupproxydhcp": "setupproxydhcp",
+                "setuptftp": "setuptftp",
+                "tftpserver": "tftpserver",
+                "xcatmaster": "xcatmaster"
+            },
+            "security_info": {
+                "productkey": "productkey",
+                "zonename": "zonename"
+            }
+        },
+        "bogusnode1": {
+            "device_info": {
+                "arch": "arch",
+                "characteristics": "mp",
+                "cpucount": "cpucount",
+                "cputype": "cputype",
+                "disksize": "disksize",
+                "memory": "memory",
+                "mtm": "mtm",
+                "serial": "serial",
+                "supportedarchs": "supportedarchs"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "conserver": "conserver",
+                        "consoleondemand": "consoleondemand",
+                        "serialflow": "serialflow",
+                        "serialport": "serialport",
+                        "serialspeed": "serialspeed"
+                    },
+                    "engine_type": "cons"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "bmc",
+                        "bmcpassword": "bmcpassword",
+                        "bmctaggedvlan": "bmcvlantag",
+                        "bmcusername": "bmcusername",
+                        "consport": "consport",
+                        "vmnicnicmodel": "vmnicnicmodel",
+                        "vmstorage": "vmstorage",
+                        "vmstoragemodel": "vmstoragemodel",
+                        "vmvirtflags": "vmvirtflags",
+                        "vmvncport": "vmvncport"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "addkcmdline": "addkcmdline",
+                        "installnic": "installnic",
+                        "osimage": "provmethod",
+                        "postbootscripts": "postbootscripts",
+                        "postscripts": "postscripts"
+                    },
+                    "engine_type": "netboot"
+                }
+            },
+            "network_info": {
+                "nics": {
+                    "enP48p1s0f0": {
+                        "ips": [
+                            "129.40.234.11"
+                        ],
+                        "networks": [
+                            "pub_yellow"
+                        ],
+                        "type": [
+                            "Ethernet"
+                        ]
+                    },
+                    "enP48p1s0f1": {
+                        "networks": [
+                            "xcat_util"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1": {
+                        "networks": [
+                            "xcat_compute"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.4": {
+                        "networks": [
+                            "xcat_bmc"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.5": {
+                        "networks": [
+                            "xcat_infra"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "enP5p1s0f1.6": {
+                        "networks": [
+                            "xcat_pdu"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "eth0": {
+                        "alias": [
+                            "moe larry curly"
+                        ],
+                        "configscripts": [
+                            "configeth eth0"
+                        ],
+                        "extraconfig": [
+                            "MTU=1500"
+                        ],
+                        "hostnameprefixe": [
+                            "eth0-"
+                        ],
+                        "hostnamesuffixes": [
+                            "-eth0"
+                        ]
+                    },
+                    "eth1": {
+                        "alias": [
+                            "tom",
+                            "jerry"
+                        ]
+                    },
+                    "ib0": {
+                        "configscripts": [
+                            "configib ib0"
+                        ],
+                        "extraconfig": [
+                            "MTU=65520 CONNECTED_MODE=yes"
+                        ],
+                        "hostnameprefixe": [
+                            "ib-"
+                        ],
+                        "hostnamesuffixes": [
+                            "-ib0"
+                        ],
+                        "ips": [
+                            "10.10.100.9"
+                        ],
+                        "networks": [
+                            "IB00"
+                        ],
+                        "type": [
+                            "Infiniband"
+                        ]
+                    },
+                    "ib1": {
+                        "ips": [
+                            "10.11.100.9"
+                        ],
+                        "networks": [
+                            "IB01"
+                        ],
+                        "type": [
+                            "Infiniband"
+                        ]
+                    },
+                    "ib2": {
+                        "networks": [
+                            "IB02"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    },
+                    "ib3": {
+                        "networks": [
+                            "IB03"
+                        ],
+                        "type": [
+                            "unused"
+                        ]
+                    }
+                },
+                "otherinterfaces": "otherinterfaces",
+                "primarynic": {
+                    "hostnames": "hostnames",
+                    "mac": [
+                        "mac"
+                    ],
+                    "switch": "switch",
+                    "switchport": "switchport",
+                    "switchvlan": "switchvlan"
+                },
+                "routenames": "routenames"
+            },
+            "obj_info": {
+                "groups": "bogusgroup"
+            },
+            "obj_type": "node",
+            "role": "service",
+            "role_info": {
+                "dhcpinterfaces": "dhcpinterfaces",
+                "enablesyslog": "syslog",
+                "monserver": "monserver",
+                "nameservers": "nameservers",
+                "nfsserver": "nfsserver",
+                "servicenode": "servicenode",
+                "setupconserver": "setupconserver",
+                "setupdhcp": "setupdhcp",
+                "setupipforward": "setupipforward",
+                "setupldap": "setupldap",
+                "setupnameserver": "setupnameserver",
+                "setupnfs": "setupnfs",
+                "setupntp": "setupntp",
+                "setupproxydhcp": "setupproxydhcp",
+                "setuptftp": "setuptftp",
+                "tftpserver": "tftpserver",
+                "xcatmaster": "xcatmaster"
+            },
+            "security_info": {
+                "zonename": "zonename"
+            }
+        },
+        "c461c022": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleondemand": "1"
+                    }
+                }
+            },
+            "obj_info": {
+                "description": "Test consoleondemand",
+                "groups": "all,test01"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "c461c026": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleondemand": "1"
+                    }
+                }
+            },
+            "obj_info": {
+                "description": "Test consoleondemand",
+                "groups": "all,test01"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "cn1": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.1",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.4-rc1-ppc64le-install-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.12.139.1",
+                    "mac": [
+                        "11:22:33:44:55:66"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "1"
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "role_info": {
+                "xcatmaster": "sn01"
+            }
+        },
+        "cn_regex": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "|\\D+(\\d+)\\D+(\\d+)\\D+(\\d+)|172.11.(($1-1)*32+$2-1).($3%100)|",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "|^\\D+(\\d+)\\D+(\\d+)\\D+(\\d+).*$|172.12.(($1-1)*32+$2-1).($3%100)|",
+                    "switch": "|\\D+(\\d+)\\D+(\\d+)\\D+(\\d+)|mid($1)tor($2)|",
+                    "switchport": "|\\D+(\\d+)\\D+(\\d+)\\D+(\\d+)|($3%100)|"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "coral_sn_regex": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_type": "ipmi"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "|\\D+(\\d+)|172.11.254.(($1%100)+100)|"
+                    },
+                    "engine_type": "ipmi"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,standby",
+                        "postscripts": "hardeths,confignetwork"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "nics": {
+                    "enP8p1s0f0": {
+                        "ips": [
+                            "|\\D+(\\d+)|172.12.254.($1%100)|"
+                        ],
+                        "networks": [
+                            "172_12_0_0-255_255_0_0"
+                        ],
+                        "type": [
+                            "ethernet"
+                        ]
+                    }
+                },
+                "primarynic": {
+                    "ip": "|\\D+(\\d+)|172.10.254.($1%100)|"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "service",
+            "role_info": {
+                "setupconserver": "1",
+                "setupdhcp": "0",
+                "setupnameserver": "1",
+                "setupnfs": "1",
+                "setuptftp": "0"
+            }
+        },
+        "coral_sn_regex1": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_type": "ipmi"
+                },
+                "hardware_mgt_engine": {
+                    "engine_type": "ipmi"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "postscripts": "hardeths,confignetwork"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "nics": {
+                    "enP8p1s0f0": {
+                        "ips": [
+                            "|\\D+(\\d+)|172.12.254.($1%100)|"
+                        ],
+                        "networks": [
+                            "172_12_0_0-255_255_0_0"
+                        ],
+                        "type": [
+                            "ethernet"
+                        ]
+                    }
+                },
+                "primarynic": {
+                    "ip": "|\\D+(\\d+)|172.10.254.($1%100)|"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "service",
+            "role_info": {
+                "setupconserver": "1",
+                "setupdhcp": "0",
+                "setupnameserver": "1",
+                "setupnfs": "1",
+                "setuptftp": "0"
+            }
+        },
+        "core01": {
+            "device_info": {
+                "characteristics": "switch",
+                "switchtype": "Mellanox"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "10.6.25.1",
+                    "mac": [
+                        "7c:fe:90:e0:84:2c"
+                    ]
+                }
+            },
+            "obj_info": {
+                "description": "Mellanox MSX1410,MLNX-OS,SWv3.5.1006",
+                "groups": "switch,core_switch"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "security_info": {
+                "remotecontrol": {
+                    "password": "admin",
+                    "username": "admin"
+                }
+            }
+        },
+        "dummytest": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "conserver": "sn02"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "mid05tor12cn02-bmc"
+                    },
+                    "engine_type": "openbmc"
+                }
+            },
+            "obj_info": {
+                "groups": "abcdef"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "dummytest1": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "conserver": "sn02"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "mid05tor12cn02-bmc"
+                    },
+                    "engine_type": "openbmc"
+                }
+            },
+            "obj_info": {
+                "groups": "abcdef"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "edge_switch": {
+            "device_info": {
+                "characteristics": "switch"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "|\\D+(\\d+)\\D+(\\d+)|172.11.2($1).($2%100)|"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "frame5u20": {
+            "device_info": {
+                "characteristics": "switch",
+                "switchtype": "onie"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "10.5.20.1",
+                    "mac": [
+                        "A8:2B:B5:59:AD:40"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "9"
+                }
+            },
+            "obj_info": {
+                "description": "Edgecore Networks Switch",
+                "groups": "switch"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "hwhs": {
+            "device_info": {
+                "arch": "armv71",
+                "characteristics": "switch",
+                "switchtype": "onie"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                },
+                "netboot_engine": {
+                    "engine_type": "onie"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.11.205.26"
+                }
+            },
+            "obj_info": {
+                "description": "the template for cumulus switch definition",
+                "groups": "switch"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "lpar5": {
+            "deprecated": {
+                "noderesprimarynic": "eth0"
+            },
+            "device_info": {
+                "arch": "ppc64"
+            },
+            "device_type": "server",
+            "engines": {
+                "netboot_engine": {
+                    "engine_info": {
+                        "installnic": "eth1"
+                    },
+                    "engine_type": "yaboot"
+                }
+            },
+            "obj_type": "group",
+            "role": "compute",
+            "role_info": {
+                "monserver": "192.168.10.1",
+                "nfsserver": "192.168.10.1",
+                "tftpserver": "192.168.10.1",
+                "xcatmaster": "192.168.10.1"
+            }
+        },
+        "mgmtsw01": {
+            "device_info": {
+                "characteristics": "switch",
+                "switchtype": "BNT"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "10.5.23.1",
+                    "mac": [
+                        "A8:97:DC:05:2E:00"
+                    ]
+                }
+            },
+            "obj_info": {
+                "description": "BNT G8052 switch",
+                "groups": "switch,mgmt_switch"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05": {
+            "device_info": {
+                "characteristics": "switch",
+                "switchtype": "Mellanox"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.11.205.100",
+                    "mac": [
+                        "f4:52:14:d6:bb:10"
+                    ],
+                    "switch": "mgmtsw01",
+                    "switchport": "5"
+                }
+            },
+            "obj_info": {
+                "description": "Mellanox MSX1400,MLNX-OS,SWv3.6.3004",
+                "groups": "switch,mid_switch"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "security_info": {
+                "remotecontrol": {
+                    "password": "admin",
+                    "username": "admin"
+                }
+            }
+        },
+        "mid05to12cn13": {
+            "device_type": "server",
+            "engines": {
+                "netboot_engine": {
+                    "engine_info": {
+                        "addkcmdline": "modprobe.blacklist=mlx5_core,mlx5_ib"
+                    }
+                }
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "mid05tor12": {
+            "device_info": {
+                "arch": "armel",
+                "characteristics": "switch",
+                "switchtype": "onie"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "cumulus3.5.2-armel"
+                    },
+                    "engine_type": "onie"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.11.205.12",
+                    "mac": [
+                        "8c:ea:1b:12:ca:40"
+                    ],
+                    "switch": "mgmtsw01",
+                    "switchport": "12"
+                }
+            },
+            "obj_info": {
+                "description": "Cumulus Linux 3.4.1 (Linux Kernel 4.1.33-1+cl3u9)",
+                "groups": "switch,edge_switch"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn01": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-rc1-ppc64le-install-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "11:22:33:44:55:66"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "role_info": {
+                "xcatmaster": "sn01"
+            }
+        },
+        "mid05tor12cn02": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.2",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd",
+                        "osimage": "rhels7.5-ppc64le-netboot-compute"
+                    },
+                    "engine_type": "grub2"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.12.139.2",
+                    "mac": [
+                        "21.22.11.11"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "2"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn02k02": {
+            "device_info": {
+                "arch": "ppc64le",
+                "uuid": "3c4473b6-0fa7-11e8-9b39-42ceac0c8bca"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1",
+                        "serialspeed": "115200"
+                    },
+                    "engine_type": "kvm"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "vmcpus": "2",
+                        "vmhost": "mid05tor12cn02",
+                        "vmmemory": "8192",
+                        "vmnics": "br0",
+                        "vmstorage": "dir:///var/lib/libvirt/images/"
+                    },
+                    "engine_type": "kvm"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.5-alternate-ppc64le-install-compute"
+                    },
+                    "engine_type": "grub2"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.12.139.202",
+                    "mac": [
+                        "42:ce:ac:0c:8b:ca"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "42vms,host02,all"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "role_info": {
+                "monserver": "briggs01",
+                "nfsserver": "briggs01",
+                "tftpserver": "briggs01",
+                "xcatmaster": "briggs01"
+            }
+        },
+        "mid05tor12cn03": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn04": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn05": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "144",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "523490MB",
+                "mtm": "8335-GTC",
+                "serial": "1318C4A",
+                "supportedarchs": "ppc64",
+                "uuid": "8335-gtc-1318c4a-70e28414280e"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.5",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,standby",
+                        "osimage": "rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "postbootscripts": "confignetwork --ibaports=2"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "nics": {
+                    "ib0": {
+                        "ips": [
+                            "20.0.0.5"
+                        ],
+                        "networks": [
+                            "ibnet"
+                        ],
+                        "type": [
+                            "Infiniband"
+                        ]
+                    }
+                },
+                "primarynic": {
+                    "ip": "172.12.139.5",
+                    "mac": [
+                        "70:e2:84:14:28:0e"
+                    ],
+                    "switch": "mid05tor12.pok.stglabs.ibm.com",
+                    "switchport": "swp5"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up,witherspoon,dd20"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn06": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn07": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn08": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn09": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn10": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute",
+                        "postscripts": "fake"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn11": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "144",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sdb:1000GB,sda:1000GB",
+                "memory": "523480MB",
+                "mtm": "8335-GTC",
+                "serial": "13189CA",
+                "supportedarchs": "ppc64le",
+                "uuid": "8335-gtc-13189ca-70e284142910"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,standby",
+                        "osimage": "rhels7.4-rc1-ppc64le-install-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "70:e2:84:14:29:10"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn12": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute",
+                        "postscripts": "fake"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn13": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261623MB",
+                "mtm": "8335-GTC",
+                "serial": "785262A",
+                "supportedarchs": "ppc64",
+                "uuid": "8335-gtc-785262a-70e284148eee"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.13",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "xcat.redhat-alt.full.netboot",
+                        "postscripts": "cuda_power9_setup"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.12.139.13",
+                    "mac": [
+                        "70:e2:84:14:8e:ee"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "13"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up,witherspoon,dd21"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn13-ipmi": {
+            "device_info": {
+                "arch": "ppc64",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261623MB",
+                "mtm": "8335-GTC",
+                "serial": "785262A",
+                "supportedarchs": "ppc64"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "openbmc"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.13",
+                        "bmcpassword": "0penBmc",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "ipmi"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.5-alternate-ppc64le-CUSTOM-netboot-compute",
+                        "postscripts": "cuda_power9_setup"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.12.139.13-ipmi",
+                    "mac": [
+                        "70:e2:84:14:8e:ee"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "13"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up-ipmi"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn14": {
+            "device_info": {
+                "arch": "ppc64le"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "rhels7.4-snap2-ppc64le-install-compute",
+                        "postscripts": "fake"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "group1,all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn15": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261623MB",
+                "mtm": "8335-GTC",
+                "serial": "785263A",
+                "supportedarchs": "ppc64",
+                "uuid": "8335-gtc-785263a-70e284148ced"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "hardware_mgt_engine": {
+                    "engine_type": "openbmc"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "addkcmdline": "rootflags=rw,mode=755,mpol=interleave:0,8",
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.5-alternate-ppc64le-netboot-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "70:e2:84:14:8c:ed"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up,witherspoon,dd21"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn15-ipmi": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261623MB",
+                "mtm": "8335-GTC",
+                "serial": "785263A",
+                "supportedarchs": "ppc64"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.15",
+                        "bmcpassword": "0penBmc",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "ipmi"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "70:e2:84:14:8c:ed"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "15"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up-ipmi"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn16": {
+            "device_info": {
+                "arch": "ppc64",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261593MB",
+                "mtm": "8335-GTC",
+                "serial": "785260A",
+                "supportedarchs": "ppc64",
+                "uuid": "8335-gtc-785260a-70e284147330"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "addkcmdline": "nmi_watchdog=0 nowatchdog nosoftlockup \"rootflags=rw,mode=755,mpol=interleave:0,8\"",
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.5-ppc64le-netboot-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "70:e2:84:14:73:30"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up,witherspoon,dd21"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn16-ipmi": {
+            "device_info": {
+                "arch": "ppc64le",
+                "characteristics": "mp",
+                "cpucount": "160",
+                "cputype": "POWER9 (raw), altivec supported",
+                "disksize": "sda:932GB,sdb:932GB",
+                "memory": "261623MB",
+                "mtm": "8335-GTC",
+                "serial": "785260A",
+                "supportedarchs": "ppc64"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.11.139.16",
+                        "bmcpassword": "0penBmc",
+                        "bmctaggedvlan": "11"
+                    },
+                    "engine_type": "ipmi"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "chain": "runcmd=bmcsetup,osimage=rhels7.5-alt-rc2-ppc64le-ANSIBLE-netboot-compute",
+                        "osimage": "rhels7.5-baiyuan-testing-ppc64le-ANSIBLE-install-compute"
+                    },
+                    "engine_type": "petitboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "70:e2:84:14:73:30"
+                    ],
+                    "switch": "mid05tor12",
+                    "switchport": "16"
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex,p9up-ipmi"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn17": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor12cn18": {
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    }
+                }
+            },
+            "obj_info": {
+                "groups": "all,compute,cn_regex"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "mid05tor25": {
+            "device_info": {
+                "arch": "armv7l",
+                "characteristics": "switch",
+                "mtm": "as4610_54",
+                "serial": "11S01FT690YA50YD775ACN",
+                "supportedarchs": "armv7l",
+                "switchtype": "onie",
+                "uuid": "as4610_54-11s01ft690ya50yd775acn-a8:2b:b5:59:ac:40"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                },
+                "netboot_engine": {
+                    "engine_type": "onie"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.11.205.25",
+                    "mac": [
+                        "a8:2b:b5:59:ac:40"
+                    ],
+                    "switch": "mgmtsw01",
+                    "switchport": "25"
+                }
+            },
+            "obj_info": {
+                "description": "Edgecore Networks Switch",
+                "groups": "switch"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "security_info": {
+                "snmp": {
+                    "authkey": "xcatpassw0rd",
+                    "authprotocol": "sha",
+                    "community": "xcatpassw0rd",
+                    "privacyprotocol": "DES",
+                    "username": "xcatadmin",
+                    "version": "3"
+                }
+            }
+        },
+        "mid05tor26": {
+            "device_info": {
+                "characteristics": "switch",
+                "switchtype": "onie",
+                "uuid": "as4610_54-11s01ft690ya50yd775abk-a8:2b:b5:59:a5:c0"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "172.11.205.26",
+                    "mac": [
+                        "A8:2B:B5:59:A5:C0"
+                    ],
+                    "switch": "mgmtsw01",
+                    "switchport": "26"
+                }
+            },
+            "obj_info": {
+                "description": "Edgecore Networks Switch",
+                "groups": "switch,edge_switch"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "security_info": {
+                "snmp": {
+                    "authkey": "xcatpassw0rd",
+                    "authprotocol": "sha",
+                    "community": "xcatpassw0rd",
+                    "privacyprotocol": "DES",
+                    "username": "xcatadmin",
+                    "version": "3"
+                }
+            }
+        },
+        "mid_switch": {
+            "device_info": {
+                "characteristics": "switch"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "|\\D+(\\d+)|172.11.20($1%100).100|",
+                    "switch": "mgmtsw01"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute",
+            "security_info": {
+                "remotecontrol": {
+                    "password": "admin",
+                    "username": "admin"
+                }
+            }
+        },
+        "mlnx": {
+            "device_type": "server",
+            "engines": {
+                "netboot_engine": {
+                    "engine_info": {
+                        "postscripts": "mlnxofed_ib_install -p /install/mlnxofed/MLNX_OFED_LINUX-4.1-4.0.7.1-rhel7.4alternate-ppc64le.iso -m --add-kernel-support -end-"
+                    }
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "node-8335-gtb-2109e4a": {
+            "device_info": {
+                "characteristics": "mp",
+                "mtm": "8335-GTB",
+                "serial": "2109E4A"
+            },
+            "device_type": "server",
+            "engines": {
+                "console_engine": {
+                    "engine_info": {
+                        "consoleenabled": "1"
+                    },
+                    "engine_type": "ipmi"
+                },
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "172.12.253.139",
+                        "hwtype": "bmc"
+                    },
+                    "engine_type": "ipmi"
+                }
+            },
+            "obj_info": {
+                "groups": "all"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "node-8335-gtc-1318c4a": {
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "node-8335-gtc-785262a": {
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "node-8335-gtc-785263a": {
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "node0001": {
+            "device_info": {
+                "arch": "x86_64"
+            },
+            "device_type": "server",
+            "obj_info": {
+                "groups": "all"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "nodemg": {
+            "device_type": "server",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "dfm"
+                },
+                "netboot_engine": {
+                    "engine_type": "yaboot"
+                }
+            },
+            "obj_info": {
+                "groups": "all"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "openbmc_test": {
+            "device_type": "server",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_info": {
+                        "bmc": "|\\D+(\\d+)$|172.12.(101+(($1)/100)).(($1)%100+1)|",
+                        "bmcpassword": "0penBmc",
+                        "bmcusername": "root"
+                    },
+                    "engine_type": "openbmc"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "restnode": {
+            "device_type": "server",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "dfm"
+                },
+                "netboot_engine": {
+                    "engine_type": "yaboot"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "mac": [
+                        "00:1a:64:54:14:80"
+                    ]
+                }
+            },
+            "obj_info": {
+                "groups": "all"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "service": {
+            "device_type": "server",
+            "engines": {
+                "netboot_engine": {
+                    "engine_info": {
+                        "postscripts": "servicenode"
+                    }
+                }
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "service[1-5]": {
+            "device_type": "server",
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "sn01": {
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "sn02": {
+            "device_type": "server",
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "testnode0001": {
+            "device_info": {
+                "arch": "x86_64"
+            },
+            "device_type": "server",
+            "obj_info": {
+                "groups": "all"
+            },
+            "obj_type": "node",
+            "role": "compute"
+        },
+        "testnodes": {
+            "device_info": {
+                "arch": "armel",
+                "characteristics": "switch",
+                "switchtype": "onie"
+            },
+            "device_type": "switch",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "switch"
+                },
+                "netboot_engine": {
+                    "engine_info": {
+                        "osimage": "cumulus3.5.2-armel"
+                    },
+                    "engine_type": "onie"
+                }
+            },
+            "network_info": {
+                "primarynic": {
+                    "ip": "10.3.5.141",
+                    "mac": [
+                        "8c:ea:2b:12:ca:40"
+                    ],
+                    "switch": "mgmtsw001",
+                    "switchport": "35"
+                }
+            },
+            "obj_info": {
+                "description": "Cumulus Linux 3.4.1 (Linux Kernel 4.1.33-1+cl3u9)",
+                "groups": "switch,edge_switch"
+            },
+            "obj_type": "node",
+            "role": "compute",
+            "role_info": {
+                "tftpserver": "briggs01"
+            }
+        },
+        "victor": {
+            "device_type": "server",
+            "engines": {
+                "hardware_mgt_engine": {
+                    "engine_type": "ipmi"
+                }
+            },
+            "obj_info": {
+                "grouptype": "static"
+            },
+            "obj_type": "group",
+            "role": "compute"
+        },
+        "xcatdefaults": {
+            "device_type": "server",
+            "engines": {
+                "netboot_engine": {
+                    "engine_info": {
+                        "postbootscripts": "otherpkgs",
+                        "postscripts": "syslog,remoteshell,syncfiles"
+                    }
+                }
+            },
+            "obj_type": "group",
+            "role": "compute"
+        }
+    },
+    "passwd": {
+        "ipmi": {
+            "password": "admin",
+            "username": "ADMIN"
+        },
+        "omapi": {
+            "password": "ZkdUWWRjdzJGSGdISWlOT0tBa0hLQ3BlT1UyblFQOEI=",
+            "username": "xcat_key"
+        },
+        "openbmc": {
+            "password": "0penBmc",
+            "username": "root"
+        },
+        "system": {
+            "password": "cluster",
+            "username": "root"
+        },
+        "xcat": {
+            "password": "cluster_junk2",
+            "username": "wsuser"
+        }
+    },
+    "policy": {
+        "1": {
+            "name": "root",
+            "rule": "allow"
+        },
+        "1.2": {
+            "name": "hamn",
+            "rule": "trusted"
+        },
+        "1.3": {
+            "name": "testme",
+            "rule": "trusted"
+        },
+        "2": {
+            "commands": "getbmcconfig",
+            "rule": "allow"
+        },
+        "2.1": {
+            "commands": "remoteimmsetup",
+            "rule": "allow"
+        },
+        "2.3": {
+            "commands": "lsxcatd",
+            "rule": "allow"
+        },
+        "3": {
+            "commands": "nextdestiny",
+            "rule": "allow"
+        },
+        "4": {
+            "commands": "getdestiny",
+            "rule": "allow"
+        },
+        "4.4": {
+            "commands": "getpostscript",
+            "rule": "allow"
+        },
+        "4.5": {
+            "commands": "getcredentials",
+            "rule": "allow"
+        },
+        "4.6": {
+            "commands": "syncfiles",
+            "rule": "allow"
+        },
+        "4.7": {
+            "commands": "litefile",
+            "rule": "allow"
+        },
+        "4.8": {
+            "commands": "litetree",
+            "rule": "allow"
+        },
+        "4.9": {
+            "commands": "getadapter",
+            "rule": "allow"
+        },
+        "6": {
+            "host": "c910loginx03",
+            "name": "wsuser",
+            "rule": "allow"
+        },
+        "7.1": {
+            "commands": "getpartition",
+            "rule": "allow"
+        }
+    },
+    "route": {},
+    "schema_version": "1.0",
+    "site": {
+        "clustersite": {
+            "SNsyncfiledir": "/var/xcat/syncfiles",
+            "auditnosyslog": "0",
+            "auditskipcmds": "ALL",
+            "blademaxp": "64",
+            "cleanupxcatpost": "no",
+            "consoleondemand": "no",
+            "databaseloc": "/var/lib",
+            "db2installloc": "/mntdb2",
+            "dhcpinterfaces": "briggs01.pok.stglabs.ibm.com|enP34p1s0f0,,enP34p1s0f0.12,enP34p1s0f1:noboot",
+            "dhcplease": "43200",
+            "disjointdhcps": "0",
+            "dnshandler": "ddns",
+            "domain": "pok.stglabs.ibm.com",
+            "enableASMI": "no",
+            "forwarders": "10.3.17.13",
+            "fsptimeout": "0",
+            "hierarchicalattrs": "postscripts",
+            "installdir": "/install",
+            "ipmimaxp": "64",
+            "ipmiretries": "3",
+            "ipmitimeout": "2",
+            "master": "10.3.17.50",
+            "maxssh": "8",
+            "nameservers": "10.3.17.50",
+            "nodesyncfiledir": "/var/xcat/node/syncfiles",
+            "ntpservers": "<xcatmaster>",
+            "powerinterval": "0",
+            "ppcmaxp": "64",
+            "ppcretry": "3",
+            "ppctimeout": "0",
+            "runbootscripts": "1",
+            "sharedtftp": "1",
+            "sshbetweennodes": "ALLGROUPS",
+            "svloglocal": "0",
+            "syspowerinterval": "0",
+            "tftpdir": "/tftpboot",
+            "timezone": "America/New_York",
+            "useNmapfromMN": "no",
+            "vsftp": "n",
+            "xcatconfdir": "/etc/xcat",
+            "xcatdebugmode": "2",
+            "xcatdport": "3001",
+            "xcatiport": "3002",
+            "xcatmaxbatchconnections": "100",
+            "xcatmaxconnections": "128",
+            "xcatsslversion": "TLSv1"
+        }
+    },
+    "zone": {}
+}
+#Version 2.14.2 (git commit 8a8be2da0e1eb12a1cecbc8701186cf95a78b49c, built Mon Jul  9 06:15:47 EDT 2018)
