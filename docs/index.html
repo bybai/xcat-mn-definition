@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl2514f1010c7b52b79959a70377a43b0b"/>
+<html><head><meta name="GCD" content="YTk3ODQ3ZWZhN2I4NzZmMzBkNTEwYjJl6e287ccdfc728e614ab6e5539fdb658c"/>
   <meta charset="utf-8">
   <title>xCAT</title>
   <meta name="generator" content="Google Web Designer 5.0.1.1129">
@@ -390,18 +390,6 @@ body {
     transform-origin: 681.853px 568px 0px;
     -webkit-transform-origin: 681.853px 568px 0px;
     -moz-transform-origin: 681.853px 568px 0px;
-}
-.gwd-img-o5nf {
-    display: block;
-    position: absolute;
-    overflow: visible;
-    height: 462px;
-    top: 98px;
-    left: 840px;
-    width: 33.9%;
-    transform-origin: 230.798px 355.891px 0px;
-    -webkit-transform-origin: 230.798px 355.891px 0px;
-    -moz-transform-origin: 230.798px 355.891px 0px;
 }
 .gwd-img-12d0 {
     position: absolute;
@@ -1326,8 +1314,9 @@ body {
     background-image: none;
     background-color: rgb(63, 173, 209);
     color: rgb(241, 232, 232);
-    top: 501px;
     left: 101px;
+    top: 501px;
+    cursor: pointer;
 }
 @keyframes gwd-gen-1m1ggwdanimation_gwd-keyframes {
     0% {
@@ -1506,6 +1495,44 @@ body {
     -webkit-animation: gwd-gen-1m1ggwdanimation_gwd-keyframes 11.6162s linear 0.4s infinite normal forwards;
     -moz-animation: gwd-gen-1m1ggwdanimation_gwd-keyframes 11.6162s linear 0.4s infinite normal forwards;
 }</style>
+  <style>.max {
+    display: block;
+    position: absolute;
+    overflow: visible;
+    width: 100%;
+    height: auto;
+    cursor: zoom-out;
+    top: 60.96px;
+}
+.min {
+    display: block;
+    position: absolute;
+    overflow: visible;
+    width: 460px;
+    height: 462px;
+    top: 101.96px;
+    cursor: zoom-in;
+    left: 866.95px;
+}
+.gwd-img-o5nf {
+    width: 460px;
+    height: 462.08px;
+    left: 846.95px;
+    top: 101.96px;
+}
+.gwd-img-6ezk {
+    top: 4px;
+}</style>
+  <script type="text/javascript" src="jquery.min.js"></script>
+  <script>
+    $(function() {
+      $('#functionpic').click(function() {
+
+        $(this).toggleClass('min');
+        $(this).toggleClass('max');
+      });
+    });
+  </script>
   <script data-source="googbase_min.js" data-version="4" data-exports-type="googbase" src="googbase_min.js"></script>
   <script data-source="gwd_webcomponents_min.js" data-version="6" data-exports-type="gwd_webcomponents" src="gwd_webcomponents_min.js"></script>
   <script data-source="gwdpage_min.js" data-version="12" data-exports-type="gwd-page" src="gwdpage_min.js"></script>
@@ -1532,7 +1559,6 @@ body {
         <button class="gwd-button-1vib">News</button>
         <button class="gwd-button-2edi">xCAT Differentiators</button>
         <button class="gwd-button-148t">Welcome to xCAT!</button>
-        <gwd-image source="image_5.png" class="gwd-img-o5nf" id="image_5" scaling="stretch"></gwd-image>
         <gwd-image source="image_7.png" class="gwd-img-12d0 gwd-img-w95v" id="image_7"></gwd-image>
         <gwd-image source="image_7.png" class="gwd-img-12d0 gwd-img-w95v gwd-image-1smg" id="image_27"></gwd-image>
         <gwd-image source="image_9.png" class="gwd-img-883l" id="image_9"></gwd-image>
@@ -1608,6 +1634,7 @@ body {
           </ul>
         </label>
         <button class="gwd-button-we8y" id="startbutton" onclick="window.location.href='https://github.com/xcat2/xcat-core'">Get Started Now!</button>
+        <gwd-image source="image_5.png" class="min" id="functionpic" scaling="stretch" alignment="right"></gwd-image>
       </div>
     </gwd-page>
     <gwd-page id="page1_1" class="gwd-page-wrapper gwd-lightbox gwd-page-19wq" data-gwd-width="100%" data-gwd-height="100%">
